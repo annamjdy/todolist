@@ -242,3 +242,39 @@ button.edit:hover {
     display: inline;
 
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    li.complete::before {
+        left: 3.3%;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    li.complete::before {
+        left: 3%;
+    }
+
+    .bar {
+        top: 13%;
+        right: 2%;
+    }
+
+    .add-todo-item input {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #myUL {
+        height: 60vh;
+    }
+
+    .bar {
+        top: 10%;
+    }
+}
