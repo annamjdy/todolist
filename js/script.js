@@ -79,5 +79,29 @@ function newElement() {
     }
 
     buttonEdit.addEventListener('click', editTask)
-    
+   
+    /// all, active, completed 
+    var all = document.querySelector('.all');
+    all.addEventListener('click', function () {
+        li.style.display = 'block';
+    })
+
+    var completed = document.querySelector('.completed');
+    completed.addEventListener('click', function () {
+        if (li.className !== "todo-item complete") {
+            li.style.display = "none";
+        } else {
+            li.style.display = "block"
+        }
+    })
+
+    var active = document.querySelector('.active-items');
+    active.addEventListener('click', function () {
+        if (li.className !== 'todo-item active') {
+            li.style.display = "none";
+        } else {
+            li.style.display = "block"
+        }
+    })
+
 }
