@@ -9,10 +9,6 @@ function newElement() {
     divDate.classList.add('todo-date');
     var divElementText = document.createElement('div');
     divElementText.classList.add('todo-element-text');
-    
-    li.append(elementDate, divElementText)
-    elementDate.appendChild(divDate);
-    
     var iAdded = document.createElement('i');
     iAdded.classList.add("far", 'fa-circle');
     var itemText = document.createElement('label');
@@ -21,6 +17,10 @@ function newElement() {
     editInput.setAttribute('type', 'text');
     const iClose = document.createElement('i');
     iClose.classList.add("far", 'fa-times-circle');
+    
+   /////appending
+    li.append(elementDate, divElementText)
+    elementDate.appendChild(divDate);
     divElementText.append(iAdded, itemText, editInput, iClose)
   
   ////////adds input
