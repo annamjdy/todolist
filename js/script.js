@@ -2,22 +2,16 @@ function newElement() {
     var li = document.createElement("li");
     li.classList.add('todo-item', 'active');
 
-    //// date
+    /////// li elements 
     var elementDate = document.createElement("div");
     elementDate.classList.add("todo-element-date");
     var divDate = document.createElement('div');
     divDate.classList.add('todo-date');
-    li.appendChild(elementDate);
-    elementDate.appendChild(divDate);
-    
-    const date = new Date();
-    const dateText = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-    divDate.innerText = dateText;
-  
-    ///////////// li elements 
     var divElementText = document.createElement('div');
     divElementText.classList.add('todo-element-text');
-    li.appendChild(divElementText);
+    
+    li.append(elementDate, divElementText)
+    elementDate.appendChild(divDate);
     
     var iAdded = document.createElement('i');
     iAdded.classList.add("far", 'fa-circle');
@@ -39,6 +33,11 @@ function newElement() {
         document.getElementById("myUL").appendChild(li);
     };
     document.getElementById("myInput").value = "";
+    
+    /////////date 
+    const date = new Date();
+    const dateText = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+    divDate.innerText = dateText;
     
      //////checked
     iAdded.addEventListener('click', function () {
