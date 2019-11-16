@@ -27,10 +27,7 @@ function newElement() {
     editInput.setAttribute('type', 'text');
     const iClose = document.createElement('i');
     iClose.classList.add("far", 'fa-times-circle');
-    divElementText.appendChild(iAdded);
-    divElementText.appendChild(itemText);
-    divElementText.appendChild(editInput);
-    divElementText.appendChild(iClose);
+    divElementText.append(iAdded, itemText, editInput, iClose)
   
   ////////adds input
     var inputValue = document.getElementById("myInput").value;
