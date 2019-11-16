@@ -42,4 +42,17 @@ function newElement() {
         document.getElementById("myUL").appendChild(li);
     };
     document.getElementById("myInput").value = "";
+    
+     //////checked
+    iAdded.addEventListener('click', function () {
+        li.classList.toggle('complete');
+        li.classList.toggle('active');
+    })
+    //////// delete
+    iClose.addEventListener('click', function () {
+        li.parentNode.removeChild(li);
+    })
+    
+   
+    
 }
