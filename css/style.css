@@ -72,7 +72,6 @@ header h1 {
     position: absolute;
     top: 24%;
     right: 5%;
-    /* margin: 0px 2.5%; */
 }
 
 .bar li {
@@ -152,13 +151,13 @@ li.complete::before {
 
 .todo-element-text {
     position: relative;
-    height: 70%;
+    min-height: 71px;
     transition: 0.5s;
     padding: 10px;
 }
 
 .todo-element-text.editMode {
-    min-height: 65px;
+    min-height: 71px;
 }
 
 .todo-item i {
