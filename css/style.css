@@ -270,10 +270,15 @@ button.edit:hover {
 
 @media only screen and (min-width: 1024px) {
     #myUL {
-        height: 60vh;
+        height: 58vh;
     }
 
     .bar {
         top: 10%;
     }
+}
+
+@media only screen and (min-width: 1440px)
+#myUL {
+    height: 65vh;
 }
