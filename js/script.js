@@ -1,19 +1,19 @@
 function newElement() {
-    var li = document.createElement("li");
+    const li = document.createElement("li");
     li.classList.add('todo-item', 'active');
 
     /////// li elements 
-    var elementDate = document.createElement("div");
+    const elementDate = document.createElement("div");
     elementDate.classList.add("todo-element-date");
-    var divDate = document.createElement('div');
+    const divDate = document.createElement('div');
     divDate.classList.add('todo-date');
-    var divElementText = document.createElement('div');
+    const divElementText = document.createElement('div');
     divElementText.classList.add('todo-element-text');
-    var iAdded = document.createElement('i');
+    const iAdded = document.createElement('i');
     iAdded.classList.add("far", 'fa-circle');
-    var itemText = document.createElement('label');
+    const itemText = document.createElement('label');
     itemText.classList.add('todo-text');
-    var editInput = document.createElement('input');
+    const editInput = document.createElement('input');
     editInput.setAttribute('type', 'text');
     const iClose = document.createElement('i');
     iClose.classList.add("far", 'fa-times-circle');
@@ -24,8 +24,8 @@ function newElement() {
     divElementText.append(iAdded, itemText, editInput, iClose)
   
   ////////adds input
-    var inputValue = document.getElementById("myInput").value;
-    var t = document.createTextNode(inputValue);
+    const inputValue = document.getElementById("myInput").value;
+    const t = document.createTextNode(inputValue);
     itemText.appendChild(t);
     if (inputValue === '') {
         alert("You must write something!");
@@ -51,13 +51,13 @@ function newElement() {
     
     ///////// edit task
 
-    var buttonEdit = document.createElement('button');
+    const buttonEdit = document.createElement('button');
     buttonEdit.classList.add('edit');
     buttonEdit.textContent = "edit";
     divElementText.appendChild(buttonEdit);
 
 
-    var editTask = function () {
+    const editTask = function () {
         var divElementText = this.parentNode;
         var editInput = divElementText.querySelector('input[type=text]');
         var containsClass = divElementText.classList.contains("editMode");
@@ -67,7 +67,7 @@ function newElement() {
             //label becomes the inputs value.
             itemText.innerText = editInput.value;
             // date of the edited task
-            var editDate = new Date();
+            const editDate = new Date();
             const modifyDate = dateText + ", modified: " + editDate.getDate() + '-' + (editDate.getMonth() + 1) + '-' + editDate.getFullYear() + ', ' + editDate.getHours() + ':' + (editDate.getMinutes() < 10 ? '0' : '') + editDate.getMinutes();
             divDate.innerText = modifyDate;
         } else {
@@ -81,12 +81,12 @@ function newElement() {
     buttonEdit.addEventListener('click', editTask)
    
     /// all, active, completed 
-    var all = document.querySelector('.all');
+    const all = document.querySelector('.all');
     all.addEventListener('click', function () {
         li.style.display = 'block';
     })
 
-    var completed = document.querySelector('.completed');
+    const completed = document.querySelector('.completed');
     completed.addEventListener('click', function () {
         if (li.className !== "todo-item complete") {
             li.style.display = "none";
@@ -95,7 +95,7 @@ function newElement() {
         }
     })
 
-    var active = document.querySelector('.active-items');
+    const active = document.querySelector('.active-items');
     active.addEventListener('click', function () {
         if (li.className !== 'todo-item active') {
             li.style.display = "none";
